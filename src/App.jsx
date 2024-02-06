@@ -3,7 +3,7 @@ import TaskList from "./TaskList";
 import NewTaskForm from "./NewTaskForm";
 import CategoryFilter from "./CategoryFilter";
 
-
+export const CATEGORIES = ["All", "Code", "Food", "Money", "Misc"];
 
 function App() {
   return (
