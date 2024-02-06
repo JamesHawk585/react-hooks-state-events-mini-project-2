@@ -1,9 +1,14 @@
 import React from "react";
+import TaskCard from "./TaskCard";
 
-function TaskList() {
+function TaskList({ tasks }) {
+
+  console.log(tasks)
   return (
     <div className="tasks">
-      {/* display a list of tasks using Task component */}
+     {tasks.map((task) => {
+      <TaskCard task={task} key={id}/>
+     })}
     </div>
   );
 }
