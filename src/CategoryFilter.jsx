@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const CategoryFilter = () => {
+function CategoryFilter() {
   return (
-    <div>CategoryFilter</div>
-  )
+    <div className="categories">
+      <h5>Category filters</h5>
+      {/* render <button> elements for each category here */}
+    </div>
+  );
 }
 
-export default CategoryFilter
+export default CategoryFilter;

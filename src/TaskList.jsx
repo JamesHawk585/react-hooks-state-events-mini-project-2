@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const TaskList = () => {
+function TaskList() {
   return (
-    <div>TaskList</div>
-  )
+    <div className="tasks">
+      {/* display a list of tasks using Task component */}
+    </div>
+  );
 }
 
-export default TaskList
+export default TaskList;
