@@ -2,7 +2,7 @@ import React from 'react'
 
 const DeleteButton = () => {
   return (
-    <button className='deleteButton'>Delete</button>
+    <button className='deleteButton' onClick={(e) => onDeleteTask(e)}>Delete</button>
   )
 }
 

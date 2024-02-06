@@ -8,6 +8,8 @@ export const categories = ["All", "Code", "Food", "Money", "Misc"];
 
 const API = 'http://127.0.0.1:5555/tasks'
 
+
+
 function App() {
   const [tasks, setTasks] = useState([])
 
