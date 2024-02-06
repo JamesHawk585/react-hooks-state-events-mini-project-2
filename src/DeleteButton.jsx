@@ -1,8 +1,10 @@
 import React from 'react'
+import { useContext } from "react"
 
-const DeleteButton = () => {
+const DeleteButton = ({ task }) => {
+    const onDeleteTask = useContext(onDeleteTask)
   return (
-    <button className='deleteButton' onClick={(e) => onDeleteTask(e)}>Delete</button>
+    <button className='deleteButton' onClick={() => onDeleteTask(task.id)}>Delete</button>
   )
 }
 

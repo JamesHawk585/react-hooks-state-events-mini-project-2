@@ -8,7 +8,7 @@ const TaskCard = ({ task }) => {
       <div className="taskCard">
         <h2>{task.text}</h2>
         <p>{task.category}</p>
-        <DeleteButton />
+        <DeleteButton task={task}/>
       </div>
     </>
   );
