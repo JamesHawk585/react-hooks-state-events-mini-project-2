@@ -3,12 +3,15 @@ import TaskCard from "./TaskCard";
 
 function TaskList({ tasks }) {
 
+
+  const taskCardComponents =  tasks.map((task) => {
+    return <TaskCard task={task} key={task.id}/>
+  })
+
   console.log(tasks)
   return (
     <div className="tasks">
-     {tasks.map((task) => {
-      <TaskCard task={task} key={id}/>
-     })}
+      {taskCardComponents}
     </div>
   );
 }

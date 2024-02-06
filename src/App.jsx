@@ -17,7 +17,7 @@ function App() {
     .then(setTasks)
   }, [])
 
-  // console.log(tasks)
+  console.log(tasks)
 
   return (
     <div className="App">

@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const TaskCard = ({ task }) => {
-  return (
-    <div>{task.text}</div>
-  )
-}
 
-export default TaskCard
+    console.log(task.text)
+  return (
+    <div className="taskCard">
+      <h2>{task.text}</h2>
+      <p>{task.category}</p>
+    </div>
+  );
+};
+
+export default TaskCard;
