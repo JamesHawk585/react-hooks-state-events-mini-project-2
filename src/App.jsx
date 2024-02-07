@@ -8,14 +8,16 @@ export const categories = ["All", "Code", "Food", "Money", "Misc"];
 
 const API = "http://127.0.0.1:5555/tasks";
 
-const onDeleteTask = (e) => {
-  console.log(e);
-};
 
 export const tasksContext = createContext();
 
+
 function App() {
   const [tasks, setTasks] = useState([]);
+
+  // const onDeleteTask = (taskId) => {
+  //   setTasks(tasks.filter(taskId !== task.id))
+  // };
 
   useEffect(() => {
     fetch(API)
@@ -23,14 +25,13 @@ function App() {
       .then(setTasks);
   }, []);
 
-  console.log(tasks);
   return (
     <div className="App">
       <h2>My Tasks</h2>
       <CategoryFilter />
       <NewTaskForm />
-      <tasksContext.Provider value={{onDeleteTask, tasks}}>
-        <TaskList />
+      <tasksContext.Provider value={{tasks}}>
+        <TaskList tasks={tasks} setTasks={setTasks}/>
       </tasksContext.Provider>
     </div>
     
