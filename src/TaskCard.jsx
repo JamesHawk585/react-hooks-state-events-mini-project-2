@@ -7,9 +7,6 @@ const TaskCard = ({ task, tasks, setTasks }) => {
   const taskId = task.id 
 
   const onDeleteTask = (taskId) => {
-    // taskId is returning undefined. 
-    console.log(taskId)
-    console.log(task.id)
     return setTasks(tasks.filter(task => taskId !== task.id))
   }; 
 
