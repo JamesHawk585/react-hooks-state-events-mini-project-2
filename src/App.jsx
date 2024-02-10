@@ -23,6 +23,22 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(e.target[0].value)
+
+
+    // Throws error that tasks.map is not a function in TaskList.jsx. This may be because newTaskObject does not have an Id. Id is provided by the backend when changes are persisted. Consided a post request in handleSubmit(). 
+
+    const newTaskObject = {
+    newTaskDescription: e.target[0].value,
+    newTaskCategory: e.target[1].value,
+    // newTaskid: tasks.length + 1
+    }
+
+    // Not sure if push() or spread operator is best here. 
+    // If I persist newTaskObject with handleSubmit(), will the initial GET request update the tasks stateful array upon calling onAddTask(), without re-rendering the entire DOM?  
+
+    setTasks(tasks.push(newTaskObject))
+
+    console.log(newTaskObject)
   }
 
   return (
