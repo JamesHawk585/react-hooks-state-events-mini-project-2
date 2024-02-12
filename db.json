@@ -1,5 +1,5 @@
 {
-"tasks" : [
+  "tasks": [
     {
       "id": 1,
       "text": "Buy rice",
@@ -34,6 +34,11 @@
       "id": 7,
       "text": "Tidy house",
       "category": "Misc"
+    },
+    {
+      "text": "Test POST API",
+      "category": "Code",
+      "id": 8
     }
   ]
 }

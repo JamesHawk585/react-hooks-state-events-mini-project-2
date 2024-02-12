@@ -10,7 +10,6 @@ const API = "http://127.0.0.1:5555/tasks";
 
 export const tasksContext = createContext();
 
-
 function App() {
   const [tasks, setTasks] = useState([]);
 
@@ -21,36 +20,38 @@ function App() {
   }, []);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(e.target[0].value)
-
-
-    // Throws error that tasks.map is not a function in TaskList.jsx. This may be because newTaskObject does not have an Id. Id is provided by the backend when changes are persisted. Consided a post request in handleSubmit(). 
-
+    e.preventDefault();
     const newTaskObject = {
-    newTaskDescription: e.target[0].value,
-    newTaskCategory: e.target[1].value,
-    // newTaskid: tasks.length + 1
-    }
+      newTaskDescription: e.target[0].value,
+      newTaskCategory: e.target[1].value,
+      
 
-    // Not sure if push() or spread operator is best here. 
-    // If I persist newTaskObject with handleSubmit(), will the initial GET request update the tasks stateful array upon calling onAddTask(), without re-rendering the entire DOM?  
+      // Make POST request here: 
 
-    setTasks(tasks.push(newTaskObject))
+      // useEffect(() => {
+      //   fetch(API)
+    };
 
-    console.log(newTaskObject)
-  }
+    setTasks(tasks.push(newTaskObject));
+  };
+  // )
+
+  // Throws error that tasks.map is not a function in TaskList.jsx. This may be because newTaskObject does not have an Id. Id is provided by the backend when changes are persisted. Consided a post request in handleSubmit().
+
+  // Not sure if push() or spread operator is best here.
+  // If I persist newTaskObject with handleSubmit(), will the initial GET request update the tasks stateful array upon calling onAddTask(), without re-rendering the entire DOM?
+
+  // console.log(newTaskObject)
 
   return (
     <div className="App">
       <h2>My Tasks</h2>
       <CategoryFilter />
-      <NewTaskForm handleSubmit={handleSubmit}/>
-      <tasksContext.Provider value={{tasks}}>
-        <TaskList tasks={tasks} setTasks={setTasks}/>
+      <NewTaskForm handleSubmit={handleSubmit} />
+      <tasksContext.Provider value={{ tasks }}>
+        <TaskList tasks={tasks} setTasks={setTasks} />
       </tasksContext.Provider>
     </div>
-    
   );
 }
 
