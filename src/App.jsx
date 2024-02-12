@@ -21,18 +21,24 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const newTaskObject = {
       newTaskDescription: e.target[0].value,
       newTaskCategory: e.target[1].value,
-      
-
+    }
       // Make POST request here: 
 
-      // useEffect(() => {
-      //   fetch(API)
-    };
+    useEffect((e) => {
+      e.preventDefault()
+      fetch(API), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTaskObject)
+      }});
 
-    setTasks(tasks.push(newTaskObject));
+    // setTasks(tasks.push(newTaskObject));
   };
   // )
 
